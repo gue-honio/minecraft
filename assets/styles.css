@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --bg: #2b2b2b;
+  --btn: #6d6d6d;
+  --btn-hover: #7f7f7f;
+  --btn-active: #595959;
+  --accent: #ffd60a;
+  --text: #e6e6e6;
+  --shadow: #000000;
+  --panel: #1e1e1e;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Press Start 2P', system-ui, sans-serif;
+  color: var(--text);
+  background-color: #1a1a1a;
+  /* Dirt texture background */
+  background-image:
+    radial-gradient(#3b3a3a 1px, transparent 2px),
+    radial-gradient(#2e2d2d 1px, transparent 2px),
+    radial-gradient(#2a2929 1px, transparent 2px);
+  background-position: 0 0, 15px 15px, 7px 7px;
+  background-size: 30px 30px, 30px 30px, 30px 30px;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* Screen & Panels */
+.mc-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 24px;
+}
+
+.mc-panel {
+  width: 100%;
+  max-width: 780px;
+  background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.6));
+  border: 4px solid #000;
+  outline: 2px solid #4b4b4b;
+  box-shadow: 0 0 0 4px #000 inset, 0 8px 0 0 #000, 0 16px 24px rgba(0,0,0,.6);
+  padding: 32px;
+}
+
+/* Titles */
+.mc-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.mc-title h1 {
+  font-size: 56px;
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: 4px 4px 0 #000, 6px 6px 0 rgba(0,0,0,.8);
+}
+.mc-title .subtitle {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 18px;
+  color: var(--accent);
+  text-shadow: 3px 3px 0 #000;
+  animation: wobble 2.6s ease-in-out infinite;
+}
+@keyframes wobble {
+  0% { transform: rotate(0deg) translateY(0); }
+  25% { transform: rotate(-1.2deg) translateY(-2px); }
+  50% { transform: rotate(0deg) translateY(0); }
+  75% { transform: rotate(1.2deg) translateY(-2px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+/* Buttons */
+.mc-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 24px auto 8px;
+  max-width: 420px;
+}
+.mc-btn,
+button.mc-btn {
+  display: block;
+  width: 100%;
+  padding: 18px 20px;
+  border: 4px solid #000;
+  outline: 2px solid #4b4b4b;
+  background: linear-gradient(180deg, var(--btn), #4f4f4f);
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform .04s ease, filter .15s ease;
+  box-shadow: 0 6px 0 0 #000, 0 12px 18px rgba(0,0,0,.5);
+}
+.mc-btn:hover {
+  filter: brightness(1.05);
+  background: linear-gradient(180deg, var(--btn-hover), #5a5a5a);
+}
+.mc-btn:active {
+  transform: translateY(2px);
+  background: linear-gradient(180deg, var(--btn-active), #4a4a4a);
+  box-shadow: 0 4px 0 0 #000, 0 8px 12px rgba(0,0,0,.5);
+}
+
+/* Special Buttons for Delete Modal */
+.btn-delete {
+  background: linear-gradient(180deg, #c0392b, #922b21) !important;
+}
+.btn-delete:hover {
+  filter: brightness(1.2);
+  background: linear-gradient(180deg, #e74c3c, #b03a2e) !important;
+}
+.btn-delete:active {
+  transform: translateY(2px);
+  background: linear-gradient(180deg, #922b21, #641e16) !important;
+}
+.btn-cancel {
+  background: linear-gradient(180deg, #6d6d6d, #4f4f4f) !important;
+}
+.btn-cancel:hover {
+  filter: brightness(1.2);
+  background: linear-gradient(180deg, #7f8c8d, #5d6d6d) !important;
+}
+.btn-cancel:active {
+  transform: translateY(2px);
+  background: linear-gradient(180deg, #4f4f4f, #2c3e50) !important;
+}
+
+/* Layout Helpers */
+.mc-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.mc-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  font-size: 12px;
+  opacity: .9;
+  text-shadow: 2px 2px 0 #000;
+}
+.mc-small { font-size: 12px; }
+.mc-card {
+  background: linear-gradient(180deg, #2a2a2a, #202020);
+  border: 4px solid #000;
+  outline: 2px solid #4b4b4b;
+  padding: 18px;
+  box-shadow: 0 6px 0 0 #000, 0 12px 18px rgba(0,0,0,.45);
+}
+.mc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+hr.pixel {
+  border: none;
+  height: 4px;
+  background: #000;
+  outline: 2px solid #4b4b4b;
+  margin: 16px 0;
+}
+.center { text-align: center; }
